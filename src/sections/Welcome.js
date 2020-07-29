@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Section, Grid } from '../components/styled/elements';
+import { Section, Grid, Header, Column, ProfilePic } from '../components/styled/elements';
 import avi from '../assets/avi.jpg';
 
 function Home() {
@@ -18,15 +18,15 @@ function Home() {
     return (
         <Section>
             <Grid>
-                <column>
-                    <img class="profile-pic" src={avi}/>
-                </column>
-                <column>
-                    <h1>
+                <Column>
+                    <ProfilePic src={avi}/>
+                </Column>
+                <Column>
+                    <Header alignText="left">
                         Good {timeOfDay} I'm John DeLaGarza. I'm a web developer from Allen, TX. <br/><br/>
-                        Enjoy your stay & <a href="mailto:thejdela@gmail.com">say hello</a> if you have some time.
-                    </h1>
-                </column>
+                        Enjoy your stay & <a href="mailto:me@johndelagarza.com">say hello</a> if you have some time.
+                    </Header>
+                </Column>
             </Grid>
         </Section>
     )

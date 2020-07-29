@@ -1,16 +1,22 @@
 import React from 'react'
-import { Menu, Button } from '../components/styled/elements';
+import { Menu, MenuItem, Button } from '../components/styled/elements';
 
-function NavBar() {
+function NavBar(props) {
+
     return (
-        <Menu>
-            <ul>
-                <li><a data-page="about">About</a></li>
-                <li><a data-page="projects">Projects</a></li>
-                <li><a data-page="about">Contact</a></li>
-            </ul>
-        </Menu>
+        <div>
+            <Menu>
+                <MenuItem href="#projects">Projects</MenuItem>
+                <MenuItem href="#about">About</MenuItem>
+                <MenuItem href="#contact">Contact</MenuItem>
+                <MenuItem >
+                    <Button onClick={()=> props.changeTheme()}>
+                        {props.theme === 'light' ? 'Dark' : 'Light'}
+                    </Button>
+                </MenuItem>
+            </Menu>
+        </div>
     )
 };
 
-export default NavBar
+export default NavBar;
